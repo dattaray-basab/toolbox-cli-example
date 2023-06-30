@@ -49,6 +49,8 @@ func init() {
 
 	setDefaults()
 
+	viper.Set("name", "Basab")
+
 	fmt.Println("name:", viper.Get("name"))
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
