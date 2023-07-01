@@ -1,6 +1,5 @@
 /*
 Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
@@ -8,8 +7,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/AlexsJones/toolbox/cmd/info"
-	"github.com/AlexsJones/toolbox/cmd/net"
+	"github.com/dattaray-basab/toolbox/cmd/info"
+	"github.com/dattaray-basab/toolbox/cmd/net"
+	"github.com/dattaray-basab/toolbox/cmd/phase"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -19,13 +19,9 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "toolbox",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Short msg - root: A brief description of your application",
+	Long: `Long msg - root: A longer description that spans multiple lines and likely contains
+examples and usage of using your application.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -34,7 +30,7 @@ to quickly create a Cobra application.`,
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	err := rootCmd.Execute()
+	err := (*rootCmd).Execute()
 	if err != nil {
 		os.Exit(1)
 	}
@@ -58,6 +54,7 @@ func init() {
 	// Add my subcommand palette
 	rootCmd.AddCommand(info.InfoCmd)
 	rootCmd.AddCommand(net.NetCmd)
+	rootCmd.AddCommand(phase.PhaseCmd)
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.toolbox.yaml)")
 
 	// Cobra also supports local flags, which will only run

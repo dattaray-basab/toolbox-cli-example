@@ -37,8 +37,8 @@ func ping(domain string) (int, error) {
 // pingCmd represents the ping command
 var pingCmd = &cobra.Command{
 	Use:   "ping",
-	Short: "This pings a remote URL and returns the response",
-	Long:  ``,
+	Short: "Short msg - ping: This pings a remote URL and returns the response",
+	Long:  `Long msg - ping`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		if resp, err := ping(urlPath); err != nil {
