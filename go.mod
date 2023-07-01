@@ -1,4 +1,4 @@
-module github.com/AlexsJones/toolbox
+module github.com/dattaray-basab/toolbox
 
 go 1.20
 

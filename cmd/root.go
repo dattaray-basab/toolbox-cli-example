@@ -1,6 +1,5 @@
 /*
 Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
@@ -8,8 +7,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/AlexsJones/toolbox/cmd/info"
-	"github.com/AlexsJones/toolbox/cmd/net"
+	"github.com/dattaray-basab/toolbox/cmd/info"
+	"github.com/dattaray-basab/toolbox/cmd/net"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
